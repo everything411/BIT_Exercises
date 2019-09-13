@@ -1,0 +1,22 @@
+F - A problem of sorting 
+    There are many people's name and birth in a list.Your task is to print the name from young to old.(There is no pair of two has the same age.)
+Input
+    First line contains a single integer T≤100 which denotes the number of test cases.
+
+For each test case, there is an positive integer n(1≤n≤100) which denotes the number of people,and next n lines,each line has a name and a birth's year(1900-2015) separated by one space.
+
+The length of name is positive and not larger than 100.Notice name only contain letter(s),digit(s) and space(s).
+Output
+    For each case, output n lines.
+Sample Input
+    2
+    1
+    FancyCoder 1996
+    2
+    FancyCoder 1996
+    xyz111 1997
+
+Sample Output
+    FancyCoder
+    xyz111
+    FancyCoder

@@ -1,0 +1,31 @@
+G - CRB and String
+CRB has two strings s and t.
+In each step, CRB can select arbitrary character c of s and insert any character d (d ≠ c) just after it.
+CRB wants to convert s to t. But is it possible?
+Input
+    There are multiple test cases. The first line of input contains an integer T, indicating the number of test cases. For each test case there are two strings s and t, one per line.
+1 ≤ T ≤ 105
+1 ≤ |s| ≤ |t| ≤ 105
+
+    All strings consist only of lowercase English letters.
+    The size of each input file will be less than 5MB.
+Output
+    For each test case, output "Yes" if CRB can convert s to t, otherwise output "No".
+Sample Input
+
+    4
+    a
+    b
+    cat
+    cats
+    do
+    do
+    apple
+    aapple
+
+Sample Output
+
+    No
+    Yes
+    Yes
+    No
