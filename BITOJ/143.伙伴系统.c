@@ -1,5 +1,4 @@
 #include <stdio.h>
-/* WA */
 int memory[11];
 const int size_tab[] = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
 int find_mem(int size)
@@ -31,8 +30,8 @@ int _alloc(int size)
 void print(void)
 {
     for (int i = 0; i < 10; i++)
-        printf("%d.", memory[i]);
-    printf("%d\n", memory[10]);
+        printf("%d ", memory[i]);
+    printf("%d \n", memory[10]);
 }
 int main(int argc, char const *argv[])
 {

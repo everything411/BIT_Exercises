@@ -6,8 +6,9 @@
         {
             "label": "Build-debug",
             "type": "shell",
-            "command": "clang++",
+            "command": "g++",
             "args": [
+                "-fsanitize=address",
                 "-g",
                 "-Wall",
                 "-o",
