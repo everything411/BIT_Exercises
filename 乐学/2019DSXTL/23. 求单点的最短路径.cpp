@@ -3,11 +3,11 @@
 #include <cstring>
 #define INF 0x3f3f3f3f
 #define MAXN 2010   // 最大顶点数
-#define MAXM 200010 // 最大边数
+#define MAXM 20010 // 最大边数
 using namespace std;
 class ShortestPath
 {
-  private:
+private:
     struct Edge // 边结构体的定义
     {
         int to, next, w;
@@ -23,7 +23,7 @@ class ShortestPath
     int N;
     Edge edge[MAXM];
     int mat[MAXN][MAXN]; //用于邻接矩阵
-  public:
+public:
     int head[MAXN];
     int num;
     int dist[MAXN];
@@ -42,16 +42,6 @@ class ShortestPath
     inline void addedge(int a, int b, int w);
     inline void FindNext(int e);
 };
-
-ShortestPath sp;
-int main(int argc, char const *argv[])
-{
-
-    return 0;
-}
-
-
-
 //sp.init()初始化
 //基于邻接表
 //sp.AddEdge(a,b,w)插入一条从a到b权值为w的边
@@ -151,10 +141,10 @@ inline void ShortestPath::AddEdge(int a, int b, int w)
     edge[num].w = w;
     edge[num].next = head[a];
     head[a] = num++;
-    edge[num].to = a;
-    edge[num].w = w;
-    edge[num].next = head[b];
-    head[b] = num++;
+    // edge[num].to = a;
+    // edge[num].w = w;
+    // edge[num].next = head[b];
+    // head[b] = num++;
 }
 //邻接矩阵部分
 inline bool ShortestPath::spfa(int s)
@@ -248,4 +238,36 @@ inline void ShortestPath::FindNext(int e)
         next[pre[i]][e] = i;
         i = pre[i];
     }
+}
+ShortestPath sp;
+bool node[128];
+int main(int argc, char const *argv[])
+{
+    int n, e;
+    char ch;
+    char a, b;
+    int w;
+    scanf("%d,%d,%c", &n, &e, &ch);
+    getchar();
+    // printf("%d %d %c\n", n, e, ch);
+    sp.point_cnt(128);
+    sp.init();
+    for (int i = 0; i < e; i++)
+    {
+        scanf("<%c,%c,%d>", &a, &b, &w);
+        getchar();
+        // printf("%c %c %d\n", a, b, w);
+        node[a] = node[b] = true;
+        sp.AddEdge(a, b, w);
+    }
+    sp.SPFA(ch);
+    for (int i = 0; i < 128; i++)
+    {
+        if (node[i])
+        {
+            printf("%c:%d\n", i, sp.dist[i]);
+        }
+    }
+
+    return 0;
 }

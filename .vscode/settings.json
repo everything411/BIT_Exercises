@@ -86,5 +86,6 @@
         "valarray": "cpp",
         "variant": "cpp",
         "time.h": "c"
-    }
+    },
+    "python.pythonPath": "/usr/bin/python"
 }
